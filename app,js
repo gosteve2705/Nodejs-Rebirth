@@ -16,7 +16,12 @@ var chapters = [{
 
 MongoClient.connect(connectionUrl, function(err, db) {
 
-  console.log("Connected correctly to server");
+    if(!err) {
+       console.log("Connected correctly to server ");
+    } else {
+      console.log("Some error was encountered!" + err );
+    }
+ 
 
   // Get some collection
   var collection = db.collection(sampleCollection);
